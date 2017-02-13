@@ -1,0 +1,23 @@
+{
+  "name": "yelp_camp",
+  "version": "1.0.0",
+  "description": "YelpCamp v1",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rafazor/YelpCamp.git"
+  },
+  "author": "Rafa Calin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rafazor/YelpCamp/issues"
+  },
+  "homepage": "https://github.com/Rafazor/YelpCamp#readme",
+  "dependencies": {
+    "ejs": "^2.5.5",
+    "express": "^4.14.1"
+  }
+}
