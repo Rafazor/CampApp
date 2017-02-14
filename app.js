@@ -6,9 +6,9 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 
  var campgrounds = [
-       {name : "Seara pe Deal" , image: "http://www.photosforclass.com/download/4684194306"},
-       {name : "Pe Meses" , image: "http://www.photosforclass.com/download/2602356334"},
-       {name : "In Padure" , image: "http://www.photosforclass.com/download/2069978635"},
+       {name : "Seara pe Deal" , image: "https://www.pexels.com/photo/group-of-people-camping-on-forest-during-daytime-198979"},
+       {name : "Pe Meses" , image: "https://www.pexels.com/photo/teal-and-yellow-dome-tent-on-peach-leveled-with-clouds-near-mountain-under-daytime-192518"},
+       {name : "In Padure" , image: "https://www.pexels.com/photo/camping-outdoor-tent-hiking-25540"},
     ];
     
 app.get("/", function(req, res){
@@ -22,7 +22,8 @@ app.get("/campgrounds", function(req, res){
 
 app.get("/campgrounds/new", function(req, res) {
     res.render("new");
-})
+});
+
 app.post("/campgrounds", function(req,res){
        var name = req.body.name;
        var image = req.body.image;

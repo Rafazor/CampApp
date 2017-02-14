@@ -1,14 +1,16 @@
 <% include partials/header %>
 
-<h1>Campgrounds Page</h1>
-
+<div class="container">
+   <header class="jumbotron">
+   <h1>Campgrounds Page</h1>
+</header>
 <a href="/campgrounds/new">Add New Campground</a>
-
 <% campgrounds.forEach(function(campgrounds){ %>
    <div>
        <%= campgrounds.name %>
        <img src="<%= campgrounds.image %>">
    </div>
 <% }); %>
+</div>
 
 <% include partials/footer %>
