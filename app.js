@@ -6,9 +6,16 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 
  var campgrounds = [
-       {name : "Seara pe Deal" , image: "https://www.pexels.com/photo/group-of-people-camping-on-forest-during-daytime-198979"},
-       {name : "Pe Meses" , image: "https://www.pexels.com/photo/teal-and-yellow-dome-tent-on-peach-leveled-with-clouds-near-mountain-under-daytime-192518"},
-       {name : "In Padure" , image: "https://www.pexels.com/photo/camping-outdoor-tent-hiking-25540"},
+       {name : "Seara pe Deal" , image: "https://images7.alphacoders.com/717/thumb-350-717815.jpg"},
+       {name : "Pe Meses" , image: "https://i.kinja-img.com/gawker-media/image/upload/s--ELrsBT8h--/c9pd8amxevnsn36ldwd5.jpg"},
+       {name : "In Padure" , image: "https://s-media-cache-ak0.pinimg.com/originals/7c/71/f6/7c71f6afd8bc66365da4a3ce2e98005a.jpg"},
+       {name : "Seara pe Deal" , image: "https://images7.alphacoders.com/717/thumb-350-717815.jpg"},
+       {name : "Pe Meses" , image: "https://i.kinja-img.com/gawker-media/image/upload/s--ELrsBT8h--/c9pd8amxevnsn36ldwd5.jpg"},
+       {name : "In Padure" , image: "https://s-media-cache-ak0.pinimg.com/originals/7c/71/f6/7c71f6afd8bc66365da4a3ce2e98005a.jpg"},
+       {name : "Seara pe Deal" , image: "https://images7.alphacoders.com/717/thumb-350-717815.jpg"},
+       {name : "Pe Meses" , image: "https://i.kinja-img.com/gawker-media/image/upload/s--ELrsBT8h--/c9pd8amxevnsn36ldwd5.jpg"},
+       {name : "In Padure" , image: "https://s-media-cache-ak0.pinimg.com/originals/7c/71/f6/7c71f6afd8bc66365da4a3ce2e98005a.jpg"},
+       
     ];
     
 app.get("/", function(req, res){
