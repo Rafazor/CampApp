@@ -1,21 +1,14 @@
-var express     = require("express"),
+var express    = require("express"),
     app        = express(),
     bodyParser = require("body-parser"),
-    mongoose   = require("mongoose")
+    mongoose   = require("mongoose"),
+    Campground = require("./models/campgrounds");
 
 mongoose.connect("mongodb://localhost/yelp_camp"); // conecteaza baza de date
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 
-// SCHEMA SETUP
-var campgroundSchema = new mongoose.Schema({
-    name: String,
-    image: String,
-    description: String
-});
-
-var Campground = mongoose.model("Campground", campgroundSchema);
 
 // Campground.create( {name : "Pe Meses" , 
 //                     image: "https://i.kinja-img.com/gawker-media/image/upload/s--ELrsBT8h--/c9pd8amxevnsn36ldwd5.jpg",
