@@ -2,8 +2,10 @@ var express    = require("express"),
     app        = express(),
     bodyParser = require("body-parser"),
     mongoose   = require("mongoose"),
-    Campground = require("./models/campgrounds");
+    Campground = require("./models/campgrounds"),
+    seedDb     = require("./seeds");
 
+seedDb();
 mongoose.connect("mongodb://localhost/yelp_camp"); // conecteaza baza de date
 
 app.use(bodyParser.urlencoded({extended: true}));
