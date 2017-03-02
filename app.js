@@ -23,13 +23,14 @@ app.get("/campgrounds", function(req, res){
         console.log(err);
     } else {
         // afiseaza toate campgrounds
-        res.render("index", {campgrounds: allCampgrounds}); 
+        res.render("campgrounds/index", {campgrounds: allCampgrounds}); 
     }
   });
 });
 
 app.get("/campgrounds/new", function(req, res) {
-    res.render("new");
+    //find campgrounf by id
+    res.render("campgrounds/new");
 });
 
 app.post("/campgrounds", function(req,res){
@@ -51,17 +52,32 @@ app.post("/campgrounds", function(req,res){
 
 //Show - shows more info
 app.get("/campgrounds/:id", function(req, res) {
-    //gaseste Campgrounds dupa id
+    //gaseste Campgrounds dupa id si populeaza cu valoarea comentariului
     Campground.findById(req.params.id).populate("comments").exec(function(err, foundCampground){
         if(err)
             console.log(err);
         else{
             console.log(foundCampground);
             //trimite campground care corespunde la id
-            res.render("show", {campground: foundCampground}); 
+            res.render("campgrounds/show", {campground: foundCampground}); 
         }
     });
 });
+
+//=============================================
+//COMMENTS
+//=============================================
+
+app.get("/campgrounds/:id/comments/new", function(req, res) {
+     Campground.findById(req.params.id, function(err, campground){
+        if(err)
+            console.log(err);
+        else {
+            res.render("comments/new", {campground: campground}); 
+        };
+    })
+});
+
 
 app.listen(process.env.PORT, process.env.IP, function(){
     console.log("Server Started!")
