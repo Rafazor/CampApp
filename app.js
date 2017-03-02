@@ -12,20 +12,6 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 
 
-// Campground.create( {name : "Pe Meses" , 
-//                     image: "https://i.kinja-img.com/gawker-media/image/upload/s--ELrsBT8h--/c9pd8amxevnsn36ldwd5.jpg",
-//                     description: "La marginea orasului dsadsad dasas dasdasda"
-    
-// }, function(err, campground){
-//   if(err)
-//     console.log(err)
-//     else {
-//     console.log("Capm:");
-//     console.log(campground);
-//     }
-// });
-
-
 app.get("/", function(req, res){
    res.render("landing"); 
 });
@@ -63,14 +49,17 @@ app.post("/campgrounds", function(req,res){
         });
 });
 
+//Show - shows more info
 app.get("/campgrounds/:id", function(req, res) {
     //gaseste Campgrounds dupa id
-    Campground.findById(req.params.id, function(err, foundCampground){
+    Campground.findById(req.params.id).populate("comments").exec(function(err, foundCampground){
         if(err)
             console.log(err);
-        else
+        else{
+            console.log(foundCampground);
             //trimite campground care corespunde la id
-            res.render("show", {campground: foundCampground});
+            res.render("show", {campground: foundCampground}); 
+        }
     });
 });
 
